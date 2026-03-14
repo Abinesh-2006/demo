@@ -1,5 +1,5 @@
-name: my first pipeline
-on: workflow_dispatch
+name: abi pipeline
+on: push
 
 jobs:
 test-job:
