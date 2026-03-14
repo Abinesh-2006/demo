@@ -3,13 +3,15 @@ name: abi pipeline
 on: push
 
 jobs:
-  test-job:
+  build-job:
     runs-on: ubuntu-latest
-    steps:
-      - name: Print Hello
-        run: echo "Hello World"
-      - name: Check Java version
-        run: java -version
 
-      - name: List files
-        run: ls
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - name: Check Python
+        run: python --version
